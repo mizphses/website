@@ -1,0 +1,9 @@
+build/
+public/
+.next/
+**/node_modules/
+**/*.min.js
+*.config.js
+.*lintrc.js
+**/generated/
+scripts/

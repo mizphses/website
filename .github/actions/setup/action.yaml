@@ -1,0 +1,16 @@
+name: "Setup"
+description: "Setup environment for the following steps"
+
+inputs:
+  env:
+    description: "Environment variables"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: oven-sh/setup-bun@v1
+      name: Install Bun
+      id: bun-install
+    - run: bun install --no-progress
+      name: Install dependencies
+      shell: bash
