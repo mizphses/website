@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "run-p dev:next 'gen:sass-type --watch'",
+    "dev": "run-p -r dev:next 'gen:sass-type --watch'",
     "dev:next": "next dev",
     "build": "next build",
     "gen:sass-type": "typed-scss-modules src",
@@ -15,12 +15,13 @@
     "format": "biome format --write ./src",
     "format-check": "biome format ./src",
     "type-check": "tsc --noEmit",
-    "fix": "npm-run-all --parallel lint:fix lint:style-fix format type-check",
-    "check": "npm-run-all --parallel lint lint:style format-check type-check"
+    "fix": "npm-run-all --parallel -r lint:fix lint:style-fix format type-check",
+    "check": "npm-run-all --parallel -r lint lint:style format-check type-check"
   },
   "dependencies": {
     "@cloudflare/next-on-pages": "^1.8.2",
     "@monaco-editor/react": "^4.6.0",
+    "@radix-ui/themes": "^2.0.3",
     "@tabler/icons": "^2.44.0",
     "@tabler/icons-react": "^2.44.0",
     "@types/lodash-es": "^4.17.12",
@@ -29,7 +30,6 @@
     "html-react-parser": "^5.0.7",
     "jotai": "^2.6.0",
     "lodash-es": "^4.17.21",
-    "microcms-js-sdk": "^2.7.0",
     "next": "14.0.3",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.1.5",
