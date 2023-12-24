@@ -1,12 +1,12 @@
 .button {
   padding: 10px;
+  font-family: var(--font-rubik), var(--font-sans-sans-jp), sans-serif;
   color: var(--text-button);
   cursor: pointer;
   user-select: none;
   background: var(--primary-primary);
   border: none;
   border-radius: var(--radius-button);
-  font-family: var(--font-rubik), var(--font-sans-sans-jp), sans-serif;
 
   &.primary {
     background: var(--primary-accent);

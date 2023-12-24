@@ -15,8 +15,8 @@
     "format": "biome format --write ./src",
     "format-check": "biome format ./src",
     "type-check": "tsc --noEmit",
-    "fix": "npm-run-all --parallel -r lint:fix lint:style-fix format type-check",
-    "check": "npm-run-all --parallel -r lint lint:style format-check type-check"
+    "fix": "run-p lint:fix lint:style-fix format type-check",
+    "check": "run-p lint lint:style format-check type-check"
   },
   "dependencies": {
     "@cloudflare/next-on-pages": "^1.8.2",
