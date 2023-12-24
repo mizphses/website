@@ -30,7 +30,7 @@ export const Works: React.FC = () => {
           {works.map(work => {
             return (
               <Link
-                href={work.url}
+                href={work.url as string}
                 className={Styles.link}
                 target='_blank'
                 rel='noopener noreferrer'
