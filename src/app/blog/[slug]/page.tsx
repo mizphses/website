@@ -35,7 +35,7 @@ export type microCmsBlogType = {
 
 type props = {
   params: {
-    slug: string
+    slug: string | 'welcome-new-blog'
   }
 }
 const inter = Inter({
