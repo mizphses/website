@@ -9,8 +9,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Styles from './page.module.scss'
 
-export const runtime = 'edge'
-
 export type category = {
   id: string
   name: string
@@ -153,7 +151,9 @@ export default async function ArticlePage({
                 X(Twitter)で共有
               </Link>
             </div>
-            {parse(data.content)}
+            {
+              parse(data.content)
+            }
           </div>
           <div>
             <div className={Styles.content}>

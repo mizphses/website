@@ -24,9 +24,12 @@
         height: 100%;
         background-color: var(--ui-primary);
         border-radius: var(--radius-card);
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+          background-color: var(--brand-100);
+        }
 
         .workItemImg {
-          width: 400px;
           height: 200px;
           background-size: cover;
           border-radius: var(--radius-card) var(--radius-card) 0 0;

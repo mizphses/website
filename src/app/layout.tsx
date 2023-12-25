@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/Navbar'
+import { GoogleTagManager } from '@/lib/gtm'
 import '@/styles/colors.scss'
 import '@/styles/variables.scss'
 import { Theme } from '@radix-ui/themes'
@@ -48,6 +49,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ja'>
+      <head>
+        <GoogleTagManager />
+      </head>
       <body>
         <Theme>
           <Navbar />
