@@ -1,1 +1,1 @@
-/blog/:slug /blog/[id] 200
+/blog/:slug /blog/[slug] 200

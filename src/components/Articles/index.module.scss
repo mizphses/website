@@ -25,6 +25,7 @@
         background-color: var(--ui-primary);
         border-radius: var(--radius-card);
         transition: background-color 0.2s ease-in-out;
+
         &:hover {
           background-color: var(--brand-100);
         }

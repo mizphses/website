@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Styles from './page.module.scss'
 
-export const runtime = 'edge';
+export const runtime = 'edge'
 
 export type category = {
   id: string
@@ -152,6 +152,7 @@ export default async function ArticlePage({
                 X(Twitter)で共有
               </Link>
             </div>
+            {/* biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation> */}
             <div dangerouslySetInnerHTML={{ __html: data.content }} />
           </div>
           <div>
