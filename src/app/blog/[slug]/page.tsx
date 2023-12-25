@@ -58,43 +58,43 @@ const rubik = Rubik({
   variable: '--font-rubik',
 })
 
-export async function generateMetadata({
-  params: { slug },
-}: props): Promise<Metadata> {
-  const data: microCmsBlogType = await mcms_client.get({
-    endpoint: 'blogs',
-    contentId: slug,
-  })
+// export async function generateMetadata({
+//   params: { slug },
+// }: props): Promise<Metadata> {
+//   const data: microCmsBlogType = await mcms_client.get({
+//     endpoint: 'blogs',
+//     contentId: slug,
+//   })
 
-  return {
-    title: data.title,
-    description: data.description,
-    openGraph: {
-      title: data.title,
-      description: data.description,
-      type: 'article',
-      images: [
-        {
-          url: data.eyecatch.url,
-          width: data.eyecatch.width,
-          height: data.eyecatch.height,
-          alt: data.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: [
-        {
-          url: data.eyecatch.url,
-          width: data.eyecatch.width,
-          height: data.eyecatch.height,
-          alt: data.title,
-        },
-      ],
-    },
-  }
-}
+//   return {
+//     title: data.title,
+//     description: data.description,
+//     openGraph: {
+//       title: data.title,
+//       description: data.description,
+//       type: 'article',
+//       images: [
+//         {
+//           url: data.eyecatch.url,
+//           width: data.eyecatch.width,
+//           height: data.eyecatch.height,
+//           alt: data.title,
+//         },
+//       ],
+//     },
+//     twitter: {
+//       card: 'summary_large_image',
+//       images: [
+//         {
+//           url: data.eyecatch.url,
+//           width: data.eyecatch.width,
+//           height: data.eyecatch.height,
+//           alt: data.title,
+//         },
+//       ],
+//     },
+//   }
+// }
 
 export default async function ArticlePage({
   params: { slug },
