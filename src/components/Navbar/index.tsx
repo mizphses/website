@@ -25,6 +25,10 @@ const menuItems = [
     url: '/',
     label: 'トップページ',
   },
+  {
+    url: '/blog',
+    label: 'ブログ',
+  },
 ]
 
 export const Navbar: React.FC = () => {

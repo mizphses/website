@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { Noto_Sans_JP, Rubik } from 'next/font/google'
+import Link from 'next/link'
 import Styles from './index.module.scss'
 
 const rubik = Rubik({
@@ -17,10 +18,13 @@ const notoSansJP = Noto_Sans_JP({
 
 export const Banner: React.FC = () => {
   return (
-    <div
-      className={clsx(Styles.blogBanner, rubik.variable, notoSansJP.variable)}
-    >
-      <p>ブログ</p>
-    </div>
+    <Link href="/blog">
+
+      <div
+        className={clsx(Styles.blogBanner, rubik.variable, notoSansJP.variable)}
+      >
+        <p>ブログ</p>
+      </div>
+    </Link>
   )
 }
