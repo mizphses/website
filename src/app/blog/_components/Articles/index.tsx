@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { mcms_client } from '@/lib/client'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -28,7 +28,7 @@ export const Articles: React.FC = () => {
               url: `/blog/${work.id}`,
               image: work.eyecatch.url,
             }
-          })
+          }),
         )
       })
   })

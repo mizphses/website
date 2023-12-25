@@ -98,12 +98,13 @@ export async function generateMetadata({
 export default async function ArticlePage({
   params: { slug },
 }: props): Promise<JSX.Element> {
-  const articleList = await mcms_client.getList({
-    endpoint: 'blogs',
-  })
-  .catch(() => {
-    return notFound()
-  })
+  const articleList = await mcms_client
+    .getList({
+      endpoint: 'blogs',
+    })
+    .catch(() => {
+      return notFound()
+    })
   if (
     !articleList.contents
       .map(content => {

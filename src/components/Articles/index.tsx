@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { mcms_client } from '@/lib/client'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -15,7 +15,7 @@ type Props = {
   Number?: number | 3
 }
 
-export const Articles: React.FC<Props> = (props) => {
+export const Articles: React.FC<Props> = props => {
   const [works, setWorks] = useState<Work[]>([])
   useEffect(() => {
     mcms_client
@@ -32,7 +32,7 @@ export const Articles: React.FC<Props> = (props) => {
               url: `/blog/${work.id}`,
               image: work.eyecatch.url,
             }
-          })
+          }),
         )
       })
   })
