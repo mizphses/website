@@ -1,13 +1,14 @@
 import { mcms_client } from '@/lib/client'
 import { IconBrandX } from '@tabler/icons-react'
 import { clsx } from 'clsx'
-import parse from 'html-react-parser'
 import type { Metadata } from 'next'
 import { Inter, Noto_Sans_JP, Rubik } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Styles from './page.module.scss'
+
+export const runtime = 'edge';
 
 export type category = {
   id: string
@@ -151,9 +152,7 @@ export default async function ArticlePage({
                 X(Twitter)で共有
               </Link>
             </div>
-            {
-              parse(data.content)
-            }
+            <div dangerouslySetInnerHTML={{ __html: data.content }} />
           </div>
           <div>
             <div className={Styles.content}>
