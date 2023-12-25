@@ -8,6 +8,7 @@ const nextConfig = {
   trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         hostname: '*',
