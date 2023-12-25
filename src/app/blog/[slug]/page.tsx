@@ -122,13 +122,13 @@ export default async function ArticlePage({
     contentId: slug,
   })
 
-  const pageUrl = `https://curious-chuo.vercel.com/articles/${slug}`
+  const pageUrl = `https://mizphs.es/articles/${slug}`
   const twitterShareUrl = `
   https://twitter.com/intent/tweet?text=${encodeURIComponent(
     `${data.title} | mizphses / Fuminori OGAWA Blog`,
   )}&url=${encodeURIComponent(pageUrl)}&hashtags=${encodeURIComponent(
-    'curious_chuo',
-  )}&via=${encodeURIComponent('curious_chuo')}`
+    'mizphses_blog',
+  )}&via=${encodeURIComponent('mizphses')}`
 
   return (
     <div
