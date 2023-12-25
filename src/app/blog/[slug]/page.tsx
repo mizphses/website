@@ -8,8 +8,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Styles from './page.module.scss'
 
-export const runtime = 'edge';
-
 export type category = {
   id: string
   name: string
@@ -35,7 +33,7 @@ export type microCmsBlogType = {
 
 type props = {
   params: {
-    slug: string
+    slug: string | 'welcome-new-blog'
   }
 }
 const inter = Inter({
@@ -58,43 +56,59 @@ const rubik = Rubik({
   variable: '--font-rubik',
 })
 
-export async function generateMetadata({
-  params: { slug },
-}: props): Promise<Metadata> {
-  const data: microCmsBlogType = await mcms_client.get({
-    endpoint: 'blogs',
-    contentId: slug,
-  })
+export async function generateStaticParams() {
+  const data = await mcms_client
+    .getList({
+      endpoint: 'blogs',
+    })
+    .then(res => {
+      return res.contents.map(content => {
+        return {
+          slug: content.id,
+        }
+      })
+    })
 
-  return {
-    title: data.title,
-    description: data.description,
-    openGraph: {
-      title: data.title,
-      description: data.description,
-      type: 'article',
-      images: [
-        {
-          url: data.eyecatch.url,
-          width: data.eyecatch.width,
-          height: data.eyecatch.height,
-          alt: data.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: [
-        {
-          url: data.eyecatch.url,
-          width: data.eyecatch.width,
-          height: data.eyecatch.height,
-          alt: data.title,
-        },
-      ],
-    },
-  }
+  return data
 }
+
+// export async function generateMetadata({
+//   params: { slug },
+// }: props): Promise<Metadata> {
+//   const data: microCmsBlogType = await mcms_client.get({
+//     endpoint: 'blogs',
+//     contentId: slug,
+//   })
+
+//   return {
+//     title: data.title,
+//     description: data.description,
+//     openGraph: {
+//       title: data.title,
+//       description: data.description,
+//       type: 'article',
+//       images: [
+//         {
+//           url: data.eyecatch.url,
+//           width: data.eyecatch.width,
+//           height: data.eyecatch.height,
+//           alt: data.title,
+//         },
+//       ],
+//     },
+//     twitter: {
+//       card: 'summary_large_image',
+//       images: [
+//         {
+//           url: data.eyecatch.url,
+//           width: data.eyecatch.width,
+//           height: data.eyecatch.height,
+//           alt: data.title,
+//         },
+//       ],
+//     },
+//   }
+// }
 
 export default async function ArticlePage({
   params: { slug },
@@ -152,6 +166,7 @@ export default async function ArticlePage({
                 X(Twitter)で共有
               </Link>
             </div>
+            {/* biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation> */}
             <div dangerouslySetInnerHTML={{ __html: data.content }} />
           </div>
           <div>
