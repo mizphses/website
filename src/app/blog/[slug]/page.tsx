@@ -136,10 +136,10 @@ export default async function ArticlePage({
     contentId: slug,
   })
 
-  const pageUrl = `https://mizphs.es/articles/${slug}`
+  const pageUrl = `https://mizphs.es/blog/${slug}`
   const twitterShareUrl = `
   https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    `${data.title} | mizphses / Fuminori OGAWA Blog`,
+    `${data.title} | mizphses / Fuminori OGAWA Blog\n`,
   )}&url=${encodeURIComponent(pageUrl)}&hashtags=${encodeURIComponent(
     'mizphses_blog',
   )}&via=${encodeURIComponent('mizphses')}`
