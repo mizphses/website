@@ -9,6 +9,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Styles from './page.module.scss'
 
+export const runtime = 'edge'
+
 export type category = {
   id: string
   name: string
