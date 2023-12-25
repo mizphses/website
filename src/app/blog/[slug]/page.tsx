@@ -56,6 +56,22 @@ const rubik = Rubik({
   variable: '--font-rubik',
 })
 
+export async function generateStaticParams() {
+  const data = await mcms_client.getList({
+    endpoint: 'blogs',
+  }).then((res) => {
+    return res.contents.map((content) => {
+      return {
+        slug: content.id,
+      }
+    })
+  })
+
+  return data
+}
+
+
+
 // export async function generateMetadata({
 //   params: { slug },
 // }: props): Promise<Metadata> {
