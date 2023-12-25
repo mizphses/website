@@ -1,19 +1,17 @@
-import './globals.scss'
+import { Navbar } from '@/components/Navbar'
 import '@/styles/colors.scss'
 import '@/styles/variables.scss'
+import { Theme } from '@radix-ui/themes'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Theme } from '@radix-ui/themes'
-import { Navbar } from '@/components/Navbar'
-
-const inter = Inter({ subsets: ['latin'] })
+import './globals.scss'
 
 export const metadata: Metadata = {
-  title: 'mizphses | Fuminori OGAWA',
+  title: 'mizphses / Fuminori OGAWA',
   description:
     'デザインとか、フロントエンドとか、マーケティングとか、キャラ企画とかをやってます。',
   openGraph: {
-    title: 'mizphses | Fuminori OGAWA',
+    title: 'mizphses / Fuminori OGAWA',
     description:
       'デザインとか、フロントエンドとか、マーケティングとか、キャラ企画とかをやってます。',
     type: 'website',
@@ -24,7 +22,7 @@ export const metadata: Metadata = {
         url: 'https://mizphs.es/ogp.webp',
         width: 1200,
         height: 630,
-        alt: 'mizphses | Fuminori OGAWA',
+        alt: 'mizphses / Fuminori OGAWA',
       },
     ],
   },
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
         url: 'https://mizphs.es/ogp.webp',
         width: 1200,
         height: 630,
-        alt: 'mizphses | Fuminori OGAWA',
+        alt: 'mizphses / Fuminori OGAWA',
       },
     ],
   },
@@ -50,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ja'>
-      <body className={inter.className}>
+      <body>
         <Theme>
           <Navbar />
           {children}

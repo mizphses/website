@@ -1,0 +1,13 @@
+.wrap {
+  min-height: calc(100vh - 110px);
+  padding-bottom: 40px;
+  margin: 0;
+  font-family: var(--font-rubik), var(--font-noto-jp), sans-serif;
+  background-color: var(--ui-background);
+
+  .main {
+    max-width: 1100px;
+    padding: 20px 40px;
+    margin: 0 auto;
+  }
+}
